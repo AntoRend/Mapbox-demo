@@ -5,8 +5,13 @@ const Dotenv = require('dotenv-webpack')
 
 module.exports = {                                                                
   webpack: (config) => {                                                          
+    config.module.rules.push({
+      test: /\.geojson$/,
+      loader: 'json-loader'
+    })
+    
     config.plugins = config.plugins || []                                         
-
+    
     config.plugins = [                                                            
      ...config.plugins,                                                          
 
