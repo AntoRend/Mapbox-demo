@@ -30,6 +30,12 @@ export default function Home() {
           <li>
             <Link href="/heatmap">Heatmap</Link>
           </li>
+          <li>
+            <Link href="/polygon">Polygon</Link>
+          </li>
+          <li>
+            <Link href="/farmers">Farmers</Link>
+          </li>
         </ul>
       </div>
 

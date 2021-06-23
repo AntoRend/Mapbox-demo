@@ -24,10 +24,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/layers": [
+    "/farmers": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/layers.js"
+      "static/chunks/pages/farmers.js"
     ]
   },
   "ampFirstPages": []
