@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const path = require('path')
+const withSass = require('sass')
 const Dotenv = require('dotenv-webpack') 
 
 module.exports = {                                                                
@@ -8,8 +9,8 @@ module.exports = {
     config.module.rules.push({
       test: /\.geojson$/,
       loader: 'json-loader'
-    })
-    
+    })    
+
     config.plugins = config.plugins || []                                         
     
     config.plugins = [                                                            
@@ -23,5 +24,8 @@ module.exports = {
     ]                                                                             
 
     return config                                                                 
-  }                                                                               
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  }                                                                          
 }

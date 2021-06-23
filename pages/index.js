@@ -1,18 +1,10 @@
 import Head from 'next/head'
-
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
+import styles from '../styles/Home.module.scss'
 
-import BaseMap from './components/heatMap/index'
-
-// import localData from '../public/files/test.geojson'
-// import localData from '../public/files/polygon.geojson'
-import localData from '../public/files/last_test3.geojson'
-// import localData from '../public/files/last_test2.geojson'
-// import localData from '../public/files/last_test.geojson'
-
-
-
+import Heatmap from '../components/heatmap'
+import DynamicLayer from '../components/dynamicLayer'
 mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
 export default function Home() {
@@ -22,16 +14,25 @@ export default function Home() {
       <Head>
         <title>Mapbox Demo</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+        <link
+          href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css'
+          rel='stylesheet'/>
       </Head>
 
-      <div className="">
+      <div className={styles.main}>
         <h1>Mapbox Demo</h1>
       </div>
-      <h2>Heatmap Component</h2>
-      <BaseMap/>
-        
-      
+      <div className="links">
+        <ul>
+          <li>
+            <Link href="/layers">Multiple layers</Link>
+          </li>
+          <li>
+            <Link href="/heatmap">Heatmap</Link>
+          </li>
+        </ul>
+      </div>
+
       <footer className={styles.footer}>
     
       </footer>
